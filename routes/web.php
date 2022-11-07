@@ -1,10 +1,14 @@
 <?php
 
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\DocumentsController as AdminDocumentsController;
 use App\Http\Controllers\CompaniesController;
 use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\DocumentsController;
 use App\Http\Controllers\EmployeesController;
+use App\Http\Controllers\PermissionsController;
 use App\Http\Controllers\PositionsController;
+use App\Http\Controllers\RolesController;
 use App\Http\Controllers\ServicesController;
 use Illuminate\Support\Facades\Route;
 
@@ -49,5 +53,16 @@ Route::get('services.zipcode/{zip}', [ServicesController::class, 'zipcode'])->na
 //Rutas para Cursos
 Route::resource('courses', CoursesController::class)->names('courses');
 
+//Rutas para Documentos
+Route::resource('documents', DocumentsController::class)->names('documents');
+Route::resource('admin_documents', AdminDocumentsController::class)->names('admin_documents');
+
 //Rutas para Blog
 Route::resource('admin_blog', BlogController::class)->names('admin_blog');
+
+//Rutas para Roles
+Route::resource('admin_roles', RolesController::class)->names('admin_roles');
+
+//Rutas para Permissions
+Route::resource('admin_permissions', PermissionsController::class)->names('admin_permissions');
+Route::get('admin_permissions.populate', [PermissionsController::class, 'populate'])->name('admin_permissions.populate');

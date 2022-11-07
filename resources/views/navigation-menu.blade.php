@@ -44,6 +44,22 @@
                         {{ __('Blog') }}
                     </x-jet-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('admin_roles.index') }}" :active="request()->routeIs('admin_roles.*')">
+                        {{ __('Roles') }}
+                    </x-jet-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('admin_permissions.index') }}" :active="request()->routeIs('admin_permissions.*')">
+                        {{ __('Permisos') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('admin_documents.index') }}" :active="request()->routeIs('admin_documents.*')">
+                        {{ __('Documentos') }}
+                    </x-jet-nav-link>
+                </div>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
